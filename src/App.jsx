@@ -1,30 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import Navbar from "./components/Navbar"
-import Hero from './components/Hero'
-import Layanan from './components/Layanan'
-import DataSection from './components/DataSection'
-import Berita from './components/Berita'
-import Users from './components/Users'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Home from './pages/Home'
+import LayananPage from './pages/Layanan'
+import DetailLayanan from './pages/DetailLayanan'
+import DetailBerita from './pages/DetailBerita'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-  <div>
+    <div>
       <Navbar />
-      <Hero />
-      <Layanan />
-      <DataSection/>
-      <Berita />
-      <Users />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/layanan" element={<LayananPage />} />
+        <Route path="/layanan/:id" element={<DetailLayanan />} />
+        <Route path="/berita/:id" element={<DetailBerita />} />
+      </Routes>
       <Footer />
     </div>
-    
   )
 }
-
-export default App

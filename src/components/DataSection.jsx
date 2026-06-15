@@ -58,7 +58,7 @@ export default function DataSection() {
           <button
             onClick={handlePrev}
             disabled={current === 0}
-            className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-[#1a4b8c] hover:bg-[#1a4b8c] hover:text-white hover:border-[#1a4b8c] disabled:opacity-30 transition ,flex-shrink-0"
+            className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-[#1a4b8c] hover:bg-[#1a4b8c] hover:text-white hover:border-[#1a4b8c] disabled:opacity-30 transition flex-shrink-0"
           >
             ←
           </button>
@@ -67,12 +67,13 @@ export default function DataSection() {
           <div className="overflow-hidden flex-1">
             <div
               ref={trackRef}
-              className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide"
+              className="flex gap-4 overflow-x-auto scroll-smooth"
+              style={{ scrollbarWidth: "none" }}
             >
               {dataItems.map((item, idx) => (
                 <div
                   key={idx}
-                  className="min-w-[260px], flex-shrink-0, bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-1 transition"
+                  className="w-72 flex-shrink-0 bg-white rounded-xl shadow-md overflow-hidden hover:-translate-y-1 transition"
                 >
                   <div className="h-44 overflow-hidden">
                     <img
@@ -97,7 +98,7 @@ export default function DataSection() {
           <button
             onClick={handleNext}
             disabled={current === dataItems.length - 1}
-            className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-[#1a4b8c] hover:bg-[#1a4b8c] hover:text-white hover:border-[#1a4b8c] disabled:opacity-30 transition ,flex-shrink-0"
+            className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center text-[#1a4b8c] hover:bg-[#1a4b8c] hover:text-white hover:border-[#1a4b8c] disabled:opacity-30 transition flex-shrink-0"
           >
             →
           </button>

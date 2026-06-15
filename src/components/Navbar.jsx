@@ -1,5 +1,5 @@
-import { useState } from "react"
-
+import { useState, useRef, useEffect } from "react"
+import { Link } from "react-router-dom"
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -22,15 +22,16 @@ export default function Navbar() {
         </div>
 
         {/* Menu Desktop */}
-        <ul className="hidden md:flex items-center gap-1">
-          {["Layanan", "Data", "Talenta", "Blog", "Informasi", "Profil"].map((item) => (
-            <li key={item}>
-              <a href="#" className="text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm transition">
-                {item}
-              </a>
-            </li>
-          ))}
-        </ul>
+{["Layanan", "Data", "Talenta", "Blog", "Informasi", "Profil"].map((item) => (
+  <li key={item}>
+    <Link
+      to={item === "Layanan" ? "/layanan" : "#"}
+      className="text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm transition"
+    >
+      {item}
+    </Link>
+  </li>
+))}
 
         {/* Burger Mobile */}
         <button

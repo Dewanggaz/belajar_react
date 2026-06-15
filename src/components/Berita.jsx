@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const beritaItems = [
   {
@@ -94,7 +95,7 @@ export default function Berita() {
             </h3>
             <p className="text-xs text-gray-400 mb-4">{featured.date}</p>
 
-            {/* List berita kecil */}
+            {/* List berita kecil di sidebar */}
             {filtered.slice(0, 2).map((b) => (
               <div
                 key={b.id}
@@ -104,7 +105,7 @@ export default function Berita() {
                 <img
                   src={b.image}
                   alt={b.title}
-                  className="w-16 h-12 object-cover rounded-md ,flex-shrink-0"
+                  className="w-16 h-12 object-cover rounded-md flex-shrink-0"
                 />
                 <div>
                   <p className="text-xs font-semibold text-gray-700 leading-snug">{b.title}</p>
@@ -127,10 +128,10 @@ export default function Berita() {
         {/* Grid berita */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((b) => (
-            <div
+            <Link
+              to={`/berita/${b.id}`}
               key={b.id}
-              onClick={() => setFeatured(b)}
-              className="rounded-xl overflow-hidden shadow-md cursor-pointer hover:-translate-y-1 transition bg-white"
+              className="rounded-xl overflow-hidden shadow-md hover:-translate-y-1 transition bg-white block"
             >
               <div className="h-44 overflow-hidden">
                 <img src={b.image} alt={b.title} className="w-full h-full object-cover" />
@@ -147,7 +148,7 @@ export default function Berita() {
                 <p className="text-xs text-gray-500 leading-relaxed mb-2">{b.excerpt}</p>
                 <span className="text-xs text-gray-400">{b.date}</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
