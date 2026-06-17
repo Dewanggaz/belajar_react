@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import LayananPage from './pages/Layanan'
 import DetailLayanan from './pages/DetailLayanan'
 import DetailBerita from './pages/DetailBerita'
+import Blog from './pages/Blog'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/layanan" element={<LayananPage />} />
         <Route path="/layanan/:id" element={<DetailLayanan />} />
         <Route path="/berita/:id" element={<DetailBerita />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       <Footer />
     </div>

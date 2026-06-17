@@ -9,7 +9,7 @@ export default function Users() {
       .then((res) => res.json())
       .then((data) => {
         setUsers(data.slice(0, 10))
-        setLoading(false)
+        setLoading(false) 
       })
   }, [])
 

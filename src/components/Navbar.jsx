@@ -9,9 +9,7 @@ export default function Navbar() {
         
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-full bg-blue-400 flex items-center justify-center text-white font-bold">
-            K
-          </div>
+          <img src="" alt="" />
           <div>
             <p className="text-sm font-bold leading-none">
               <span className="text-white">Kemen</span>
@@ -25,7 +23,7 @@ export default function Navbar() {
 {["Layanan", "Data", "Talenta", "Blog", "Informasi", "Profil"].map((item) => (
   <li key={item}>
     <Link
-      to={item === "Layanan" ? "/layanan" : "#"}
+      to={item === "Layanan" ? "/layanan" : item === "Blog" ? "/Blog" :  "#"}
       className="text-white/80 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm transition"
     >
       {item}
